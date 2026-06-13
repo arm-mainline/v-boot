@@ -19,3 +19,4 @@ This project is deeply inspired by the **lk2nd** project. While `lk2nd` provides
 ## 🛠️ Boot Flow Architecture
 Unlike standard PCs, mobile ARM devices boot in chains. `v-boot` fits perfectly in the middle to bring freedom:
 ---
+Uras and Mami vibe
