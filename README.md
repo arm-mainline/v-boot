@@ -1,22 +1,39 @@
-# v-boot
+v-boot
 
-A lightweight secondary bootloader with a **Das U-Boot** payload designed for ARM32 and ARM64 platforms, specifically targeting legacy and mainline mobile devices (smartphones and tablets).
-`v-boot` aims to bridge the gap between proprietary vendor bootloaders and standard Linux boot ecosystems without the massive overhead of EDK2.
----
-## 💡 Inspiration
+A lightweight, custom-engineered secondary bootloader for ARM mobile devices.
+👋 Who We Are
 
-This project is deeply inspired by the **lk2nd** project. While `lk2nd` provides an amazing Fastboot interface and hardware initialization abstraction layer for Qualcomm devices, `v-boot` extends this philosophy by chainloading **Das U-Boot** directly as a payload, offering a fully standard, highly scriptable, and feature-rich Linux booting environment on mobile screens.
----
-## 🚀 Key Features
+We are Uras and Mami, two 11-year-old 5th-grade students from Turkey. We have a deep passion for embedded systems, low-level programming, and hardware hacking. Despite our age, we are dedicated to exploring the depths of ARM architecture and contributing to the open-source community by building tools that bring freedom to locked-down mobile hardware. v-boot is our journey into understanding how mobile devices come to life.
+💡 Engineering Philosophy
 
-* **Dual Architecture Support:** Designed from the ground up to support both legacy ARM32 (ARMv7, e.g., MSM8226) and modern ARM64 (ARMv8) mobile SoCs.
-* **Zero UEFI Bloat:** Avoids the complexity and size of full UEFI environments (like EDK2) while maintaining native hardware access.
-* **U-Boot Integration:** Leverages the power of Das U-Boot for standard boot scripts, modern file system support (ext4, btrfs, f2fs), and standard tools.
-* **Display & Peripherals:** Early framebuffer initialization to give visual feedback directly on the smartphone/tablet panel.
-* **Mainlining Helper:** Simplifies booting standard Linux distributions (like Arch Linux ARM, PostmarketOS, Debian) using standard standard boot configurations (`extlinux.conf`).
----
+v-boot is a lightweight, custom-engineered secondary bootloader designed to provide native Fastboot and Recovery booting capabilities on ARM32 and ARM64 mobile platforms.
 
-## 🛠️ Boot Flow Architecture
-Unlike standard PCs, mobile ARM devices boot in chains. `v-boot` fits perfectly in the middle to bring freedom:
----
-Uras and Mami vibe
+We are deeply inspired by the lk2nd project's robust design and hardware abstraction patterns. However, v-boot is a clean-room implementation, developed to offer a minimal, high-performance environment for bringing up mainline Linux kernels. We do not use bloated payloads (like EDK2 or U-Boot); instead, we rely on a custom, streamlined boot flow that communicates directly with the hardware.
+🚀 Key Features
+
+    Custom Fastboot & Recovery: Full, hand-written control over the boot process, enabling custom Fastboot commands and recovery partition handling.
+
+    Mainline-First Approach: We utilize Mainline Kernel Device Trees as the "source of truth," ensuring our bootloader aligns perfectly with upstream Linux developments.
+
+    Zero Payload Overhead: No UEFI/EDK2 bloat. The logic is native, lightweight, and tightly integrated for maximum performance.
+
+    Dual Architecture Support: Engineered to handle both legacy ARM32 (ARMv7) and modern ARM64 (ARMv8) SoCs.
+
+    Education & Openness: We document our process to help other young developers learn how mobile boot chains work.
+
+🛠️ Boot Flow Architecture
+
+v-boot acts as a direct, lightweight bridge between the vendor's primary bootloader and the Linux environment:
+Plaintext
+
+[PBL] -> [SBL/ABOOT] -> [v-boot (Custom)] -> [Linux Kernel]
+
+🏗️ Getting Started
+git clone https://github.com/little-arm-mainline/v-boot
+# Build instructions and prerequisites will be added soon.
+
+
+📜 License
+
+This project is licensed under the GPL-3.0 License.
+Neden bu şekilde oldu?
