@@ -1,6 +1,6 @@
 v-boot
 ---
-A lightweight, custom-engineered secondary bootloader for ARM mobile devices.
+A lightweight, custom-engineered secondary bootloader for ARM mobile devices.(Tested with GCC 9.4)
 ---
 👋 Who We Are
 We are Uras and Mami, two 11-year-old 5th-grade students from Turkey. We have a deep passion for embedded systems, low-level programming, and hardware hacking. Despite our age, we are dedicated to exploring the depths of ARM architecture and contributing to the open-source community by building tools that bring freedom to locked-down mobile hardware. v-boot is our journey into understanding how mobile devices come to life.
@@ -30,7 +30,7 @@ Plaintext
 🏗️ Getting Started
 git clone https://github.com/little-arm-mainline/v-boot
 cd v-boot
-make
+make(Tested with GCC 9.4)
 
 📜 License
 
