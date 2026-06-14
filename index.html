@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>arm-mainline | v-boot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Welcome to arm-mainline</h1>
-    <p>We are building a lightweight secondary bootloader.</p>
-    <a href="https://github.com/arm-mainline/v-boot">Check out our project on GitHub</a>
+<body class="bg-slate-900 text-white font-sans">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+        <h1 class="text-5xl font-bold mb-4 text-blue-400">arm-mainline</h1>
+        <p class="text-xl text-gray-300 mb-8">A lightweight, custom-engineered secondary bootloader for ARM mobile devices.</p>
+        
+        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h2 class="text-2xl font-semibold mb-4">v-boot</h2>
+            <p class="mb-6 text-gray-400">We are currently developing a clean-room implementation for native Fastboot and Recovery booting capabilities.</p>
+            <a href="https://github.com/arm-mainline/v-boot" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded transition">
+                View on GitHub
+            </a>
+        </div>
+    </div>
 </body>
 </html>
