@@ -1,0 +1,62 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) 2020, The Linux Foundation. All rights reserved.
+ */
+
+#include "qcom-msm8226.dtsi"
+#include <dt-bindings/input/linux-event-codes.h>
+
+/ {
+    model = "Samsung Galaxy S III Neo";
+    compatible = "samsung,s3ve3g", "qcom,msm8226";
+    chassis-type = "handset";
+
+    aliases {
+        serial0 = &blsp1_uart3;
+    };
+
+    chosen {
+        stdout-path = "serial0:115200n8";
+    };
+
+    gpio-keys {
+        compatible = "gpio-keys";
+        pinctrl-names = "default";
+        pinctrl-0 = <&vol_down_pin>;
+
+        vol-down {
+            label = "volume_down";
+            gpios = <&tlmm 107 GPIO_ACTIVE_LOW>;
+            linux,code = <KEY_VOLUMEDOWN>;
+            debounce-interval = <15>;
+            gpio-key,wakeup;
+        };
+    };
+};
+
+&tlmm {
+    vol_down_pin: vol-down-pin {
+        pins = "gpio107";
+        function = "gpio";
+        drive-strength = <2>;
+        bias-pull-up;
+    };
+};
+
+&pm8226_pon {
+    button@power {
+        compatible = "qcom,pm8941-pon-power";
+        linux,code = <KEY_POWER>;
+        label = "power";
+    };
+
+    button@resin {
+        compatible = "qcom,pm8941-pon-resin";
+        linux,code = <KEY_VOLUMEUP>;
+        label = "volume_up";
+    };
+};
+
+&blsp1_uart3 {
+    status = "okay";
+};
