@@ -4,20 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>arm-mainline | v-boot</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body class="bg-slate-900 text-white font-sans">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-        <h1 class="text-5xl font-bold mb-4 text-blue-400">arm-mainline</h1>
-        <p class="text-xl text-gray-300 mb-8">A lightweight, custom-engineered secondary bootloader for ARM mobile devices.</p>
-        
-        <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
-            <h2 class="text-2xl font-semibold mb-4">v-boot</h2>
-            <p class="mb-6 text-gray-400">We are currently developing a clean-room implementation for native Fastboot and Recovery booting capabilities.</p>
-            <a href="https://github.com/arm-mainline/v-boot" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded transition">
-                View on GitHub
+<body class="bg-slate-950 text-slate-100 font-sans selection:bg-blue-500">
+
+    <!-- Hero Section -->
+    <div class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+        <h1 data-aos="fade-down" data-aos-duration="1000" class="text-6xl md:text-8xl font-black mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
+            arm-mainline
+        </h1>
+        <p data-aos="fade-up" data-aos-duration="1000" class="text-xl md:text-2xl text-slate-400 mb-10 max-w-2xl">
+            A lightweight, custom-engineered secondary bootloader for ARM mobile devices. Building the future of mainline booting.
+        </p>
+        <div data-aos="zoom-in" data-aos-duration="1200">
+            <a href="https://github.com/arm-mainline/v-boot" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 transition-all rounded-full font-bold text-lg shadow-[0_0_20px_rgba(37,99,235,0.5)]">
+                View Project on GitHub
             </a>
         </div>
     </div>
+
+    <!-- Features Section -->
+    <section class="py-20 px-6 max-w-5xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Why v-boot?</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div data-aos="fade-up" data-aos-delay="100" class="p-8 bg-slate-900 border border-slate-800 rounded-2xl hover:border-blue-500 transition-all">
+                <h3 class="text-xl font-bold mb-3 text-blue-400">Mainline Focused</h3>
+                <p class="text-slate-400">Leveraging official Linux kernel device trees for maximum compatibility.</p>
+            </div>
+            <!-- Card 2 -->
+            <div data-aos="fade-up" data-aos-delay="200" class="p-8 bg-slate-900 border border-slate-800 rounded-2xl hover:border-emerald-500 transition-all">
+                <h3 class="text-xl font-bold mb-3 text-emerald-400">Lightweight</h3>
+                <p class="text-slate-400">Optimized for speed. No bloat, just the essential bootloader logic.</p>
+            </div>
+            <!-- Card 3 -->
+            <div data-aos="fade-up" data-aos-delay="300" class="p-8 bg-slate-900 border border-slate-800 rounded-2xl hover:border-purple-500 transition-all">
+                <h3 class="text-xl font-bold mb-3 text-purple-400">Open Source</h3>
+                <p class="text-slate-400">Built by the community, for the community. Contributions are welcome.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
